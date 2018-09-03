@@ -1,0 +1,34 @@
+{% load i18n %}
+<nav class="navbar navbar-expand navbar-light bg-light p-1">
+  <div class="container" style="padding: 0px 5px;">
+    <a class="navbar-brand" href="{% url 'App:home' %}"><img src="/media/main/logo.png" width="100"></a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div style="width: 900px;">
+        {% if user.is_authenticated %}
+          <li class="nav-item dropdown float-right">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ user }}님
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-home"></i>
+                찜목록
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-cog" style="color: #8f9295; margin-right: 8px;"></i>
+                계정 설정
+              </a>
+              <a class="dropdown-item" href="{% url 'logout' %}">
+                <i class="fa fa-power-off" style="color: #8f9295; margin-right: 8px;"></i>
+                로그아웃
+              </a>
+            </div>
+          </li>
+        {% else %}
+          <a class="btn btn-light float-right" href="{% url 'App:signup' %}">회원가입</a>
+          <a class="btn btn-light float-right" href="{% url 'login' %}">로그인</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>

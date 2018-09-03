@@ -1,0 +1,45 @@
+{% extends "Base/Base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'Login/css/style.css' %}">
+    <div class="container">
+        <div class="center-block" id="box">
+        <div class="center-block" id="box1"></div>
+        <div class="center-block" id="box3">
+            <div class="" id="box4">
+                <p class="po" id="fl">계정이<br />있으십니까?</p>
+                <p class="po" id="fl1">글길의 오신 걸 환영합니다.</p>
+            </div>
+            <div id="box5">
+                <a class="navbar-brand" href="{% url 'App:signup' %}"><button type="button">회원가입</button></a>
+            </div>
+        </div>
+        <div class="center-block" id="box2">
+            <div id="con1">
+                <p id="join">로그인</p>
+                <form method="post">
+                    {% csrf_token %}
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input class="si" type="text" placeholder="아이디 또는 이메일" name="username" required="" id="id_username" autocomplete="off">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="si" type="password" placeholder="비밀번호" name="password" autocomplete="off" required="" id="id_password">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="con2">
+                            <button type="submit" id="bu">로그인</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock%}

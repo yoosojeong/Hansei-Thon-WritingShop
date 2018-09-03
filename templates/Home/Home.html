@@ -1,0 +1,44 @@
+{% extends "Base/Base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'Home/css/style.css' %}">
+<div class="jumbotron">
+	<div class="jumbotron-inner">
+		<div class="invitation">
+			<p class="invitation-text-md">오늘의 기분은 어떠신가요?</p>
+			<h1 class="invitation-heading">글로써 삶의 길을 살아가요</h1>
+			<p class="invitation-text-sm"> 
+        <a class="btn btn-info" href="{% url 'App:list_search' %}">검색하기</a>
+        <a class="btn btn-info" href="{% url 'App:list_create' %}">글귀작성</a>
+      </p>
+		</div>
+	</div>
+</div>
+    <div class="container">
+      <div class="row">
+        {% for writePostData in writePostDatas %}
+          <div class="col-4.5">
+            <div class="card bg-light mb-3" style="max-width: 20rem;">
+              <div class="card-body">
+
+                  <h6 class="img_li"><a href='home/list/{{ writePostData.pk }}/'><img id="im" src="/media/{{ writePostData.images }}" style="width: 280px;"></a></h6>
+
+                  <p class="project-skills-tag-viewbox">
+                    {% for tag in writePostData.tags.all %}
+                      <span class="skills-tag">{{tag}}</span>
+                    {% endfor %}
+                    ...
+                  </p>
+              
+               </div>
+             </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+{% endblock%}
+
+
+
+

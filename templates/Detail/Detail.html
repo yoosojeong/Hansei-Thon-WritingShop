@@ -1,0 +1,30 @@
+{% extends "Base/Base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'Detail/css/style.css' %}">
+    <div class="container center-block">
+      <p style="margin: auto;width: 50px;margin-top: 15px;">{{ writePostData.user }}</p>
+      <div id="ma">
+        <img id="im" class="img-responsive center-block"  src="/media/{{ writePostData.images }}">
+      </div>
+      <div class="center-block pp">
+        {% for tag in writePostData.tags.all %}
+            <p class="ax skills-tag">{{ tag }}</p>
+        {% endfor %}
+        <div id="box1" class="center-block">
+        </div>
+      </div>
+      	<div class="jumbotron-inner">
+            <div class="invitation">
+                <div id="block">
+                    <p class="invitation-text-md">{{ writePostData.content }}</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+{% endblock%}
+
+
+

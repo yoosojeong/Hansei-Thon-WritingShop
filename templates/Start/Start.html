@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'Start/css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>글길</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="il"></div>
+      <div class="center-block" id="text">
+        <div class="center-block" id="box">
+          <div class="img-responsive center-block" id="log">
+            <img src="/media/main/logo_white.png">
+          </div>
+          <div class="center-block" id="fonl">
+            <p id="fon">글로써 삶의 길을 살아가자</p>
+          </div>
+        </div>
+        <div class="center-block" id="buu">
+          <a class="navbar-brand" href="{% url 'App:home' %}"><button type="button">시작하기</button></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

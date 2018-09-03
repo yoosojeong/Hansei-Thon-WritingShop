@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: "typo";
+  src: url({% static 'font/typo.tff' %}) format("truetype");
+}
+
+.container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#con {
+  width: auto;
+  height: auto;
+}
+
+#il {
+  position: absolute;
+  background-image: url('/media/main/background.png');
+	background-repeat: no-repeat;
+  width: 1536px;
+  height: 758px;
+	background-position: center;
+	background-size: cover;
+}
+
+#log {
+  width: 219px;
+  height: 161px;
+}
+
+#text {
+  display: block;
+  top: 17%;
+  left: 37%;
+  margin: auto;
+  text-align: center;
+  background-color: #ffffff1f;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  /*color: white;*/
+}
+
+#fon {
+  font-size: 28px;
+  color: white;
+  font-family: typo;
+}
+
+#fonl {
+  margin-top: 30px;
+}
+
+#box {
+  position: relative;
+  top: 77px;
+  width: auto;
+  height: 400px;
+}
+
+#buu {
+  position: relative;
+  top: 50px;
+  width: 121px;
+  height: 40px;
+  margin: auto;
+}
+
+button[type="button"]{
+  color: white;
+  font-family: typo;
+  border: 0;
+  font-size: 19px;
+  background-color: #ffffff00;
+  outline: none;
+}

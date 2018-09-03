@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "typo";
+  src: url(../font/typo.ttf) format("truetype");
+}
+
+body {
+  margin: 0;
+}
+
+.f {
+  font-family: typo;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+}
+
+#tex{
+    width: 280px;
+}
+#cola {
+    width: 420px;
+}
+
+#sent {
+  top: 80px;
+  margin: auto;
+  position: absolute;
+}
+
+#box1 {
+  position: relative;
+  top: 80px;
+  margin: auto;
+  width: 304px;
+  height: 50px;
+}
+
+#box2 {
+  position:relative;
+  top:77px;
+  text-align: center;
+  margin-bottom: 41px;
+  font-family: typo;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+#box3 {
+    position: relative;
+    margin: auto;
+    top: 122px;
+    width: 340px;
+}
+
+#bt {
+border: 1px solid black;
+    border-radius: 3px;
+    background-color: white;
+    float: right;
+    position: relative;
+    top: -2px;
+}
+
+#ic {
+    float: right;
+    bottom: -4px;
+    right: 4px;
+    display: block;
+    height: 31px;
+    width: 32px;
+}

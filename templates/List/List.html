@@ -1,0 +1,11 @@
+{% extends "Base/Base.html" %}
+{% load static %}
+
+{% block content %}
+    {% for writePostData in writePostDatas %}
+        <img src="../../{{ writePostData.image }}" alt="안나옴">
+        {% for tag in writePostData.tags.all %}
+            {{ tag }}
+        {% endfor %}
+    {% endfor %}
+{% endblock%}

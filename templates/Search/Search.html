@@ -1,0 +1,39 @@
+{% extends "Base/Base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'Search/css/style.css' %}">
+<div id="search_div">
+  <form class="mt-5" method="post" action="">
+      {% csrf_token %}
+      {{ form.as_p }} 
+  </form>
+</div>
+
+
+{% if writepost %} 
+   <div class="container">
+      <div class="row">
+        {% for posts in writepost%}
+            {% for post in posts%}
+          <div class="col-4.5">
+            <div class="card bg-light mb-3" style="max-width: 20rem;">
+              <div class="card-body">
+
+                <h6 class="img_li"><a href='/home/list/{{ post.pk }}/'><img id="im" src="/media/{{ post.images }}" style="width: 280px;"></a></h6>
+    
+                <p class="project-skills-tag-viewbox">
+                  {% for tag in post.tags.all %}
+                        <span class="skills-tag">{{tag}}</span>
+                  {% endfor %}
+                      ...
+                </p>
+               </div>
+             </div>
+            </div>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+{% endif %}
+{% endblock%}
