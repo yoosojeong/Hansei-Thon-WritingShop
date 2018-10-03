@@ -44,31 +44,3 @@ urlpatterns = [
     ), 
 ]
 
-
-
-def ProjectListPage(request):
-    search = request.GET.get('q')
-    page = request.GET.get('page')
-    if search == None:
-        search = ""
-    if page == None:
-        page = 1
-
-    projects = Project.objects.all()
-    item_list = []
-    for project in projects:
-        dict = {}
-        dict['project'] = project
-        dict['apply'] = len(ProjectApply.objects.filter(project=project))
-        dict['tags'] = ProjectTag.objects.filter(project=project)[:6]
-        item_list.append(dict)
-
-    paginator = Paginator(item_list, 3)
-    contacts = paginator.get_page(page)
-
-    return render(request, 'ProjectList/ProjectListPage.html', {
-        'search': search,
-        'page': page,
-        'items': contacts,
-        'projects_len':len(projects),
-    })

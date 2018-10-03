@@ -26,7 +26,7 @@ class HomePage(APIView):
         writePostDatas = WritePostModel.objects.all()[:9]
         context = { 'writePostDatas' : writePostDatas, 'form': form }
 
-        return render(request, "Home/Home.html", context )
+        return render(request, "Main/Main.html", context )
 
 class ListSearchPage(APIView):
 
@@ -56,6 +56,7 @@ class ListSearchPage(APIView):
             writepost_li = list(set(writepost_li))
             
             print(writepost_li)
+
             return render(request, "Search/Search.html", {'writepost': writepost_li })
 
         return Response(status=status.HTTP_201_CREATED)
